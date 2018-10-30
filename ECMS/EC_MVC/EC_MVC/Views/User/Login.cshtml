@@ -1,0 +1,38 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <p>
+                <span>用户名：</span> @Html.TextBox("userName")
+            </p>
+            
+             <p>
+                <span>密码：</span> @Html.Password("pwd")
+            </p>
+            
+             <p>
+                <span>用户类型：</span> @Html.RadioButton("type",1,true) 管理员/卖家
+                 @Html.RadioButton("type", 2) 买家
+            </p>
+            
+            <p>
+                <input type="submit" value="登录" />
+                <input type="button" value="注册新用户" onclick="location.href='/user/register'" />
+            </p>
+
+        }
+
+    </div>
+</body>
+</html>

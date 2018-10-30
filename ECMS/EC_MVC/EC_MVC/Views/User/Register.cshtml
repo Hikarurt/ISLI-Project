@@ -1,0 +1,59 @@
+﻿@{
+    Layout = null;
+}
+@model EC_MVC.Models.UserInfo
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script>
+        $(function () {
+            $("#LoginId").blur(function () {
+                $.ajax({
+                    type: "get",
+                    url: "http://localhost:30530/api/user/CheckUserName/" + this.value,
+                    success: function (data) {
+                        if (data > 0) {
+                            $("#sRemind").text("该用户名已存在，请换一个吧").css("color", "red");
+                            $("#LoginId").select();//当前文本框高亮提醒
+
+                            //设置提交按钮禁用
+                            $("#subReg").prop("disabled", "disabled")
+                        } else {
+                            $("#sRemind").text("√").css("color", "green");
+                            $("#subReg").prop("disabled", "")
+                        }
+                    }
+                    });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <p>
+                <span>用户名：</span> @Html.TextBoxFor(m=>m.LoginId)
+                <span id="sRemind"></span>
+            </p>
+
+            <p>
+                <span>密码：</span> @Html.TextBoxFor(m => m.Pwd)
+            </p>
+
+            <p>
+                <span>确认密码：</span> @Html.TextBox("pwdR")
+            </p>
+
+          
+
+            <input id="subReg" type="submit" value="注册" />
+
+        }
+    </div>
+</body>
+</html>

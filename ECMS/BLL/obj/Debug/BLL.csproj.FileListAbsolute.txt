@@ -1,0 +1,11 @@
+E:\BaWay\班级\1603E\高级第六月\课堂案例\ECMS\BLL\bin\Debug\BLL.dll
+E:\BaWay\班级\1603E\高级第六月\课堂案例\ECMS\BLL\bin\Debug\BLL.pdb
+E:\BaWay\班级\1603E\高级第六月\课堂案例\ECMS\BLL\bin\Debug\DAL.dll
+E:\BaWay\班级\1603E\高级第六月\课堂案例\ECMS\BLL\bin\Debug\Model.dll
+E:\BaWay\班级\1603E\高级第六月\课堂案例\ECMS\BLL\bin\Debug\EntityFramework.dll
+E:\BaWay\班级\1603E\高级第六月\课堂案例\ECMS\BLL\bin\Debug\DAL.pdb
+E:\BaWay\班级\1603E\高级第六月\课堂案例\ECMS\BLL\bin\Debug\Model.pdb
+E:\BaWay\班级\1603E\高级第六月\课堂案例\ECMS\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+E:\BaWay\班级\1603E\高级第六月\课堂案例\ECMS\BLL\obj\Debug\BLL.dll
+E:\BaWay\班级\1603E\高级第六月\课堂案例\ECMS\BLL\obj\Debug\BLL.pdb
+E:\BaWay\班级\1603E\高级第六月\课堂案例\ECMS\BLL\bin\Debug\Newtonsoft.Json.dll

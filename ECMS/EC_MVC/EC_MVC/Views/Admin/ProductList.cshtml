@@ -1,0 +1,62 @@
+﻿@model EC_MVC.Models.PageList
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>商品名称</th>
+        <th>单价</th>
+        <th>图片</th>
+        <th>商品描述</th>
+        <th>所属卖家</th>
+        <th>商品类型</th>
+    </tr>
+    @foreach (var item in Model.ProductList)
+    {
+        <tr>
+            <td>@item.PId</td>
+            <td>@item.PName</td>
+            <td>@item.Price</td>
+            <td>@item.PImg</td>
+            <td>@item.Content</td>
+            <td>@item.AId</td>
+            <td>@item.PId</td>
+        </tr>
+    }
+
+
+</table>
+
+<p>总共查询条 @Model.TotalCount 记录，共 @Model.TotalPage 页，当前显示 @ViewBag.index  页</p>
+<p>
+    @{
+        //如果当前显示第一页，首页和上一页不能点击
+        if (ViewBag.index == 1)
+        {
+            <a>首页</a>
+            <a>上一页</a>
+        }
+        else
+        {
+            //使用ajax超链接，实现首页和上一页跳转
+            @Ajax.ActionLink("首页", "ProductList", new { @id = 1 }, new AjaxOptions { UpdateTargetId = "right" })
+            @Ajax.ActionLink("上一页", "ProductList", new { @id = (ViewBag.index - 1) }, new AjaxOptions { UpdateTargetId = "right" })
+
+        }
+
+        //如果当前页等于最大页数
+        if (ViewBag.index == Model.TotalPage)
+        {
+            <a>下一页</a>
+            <a>尾页</a>
+        }
+        else
+        {
+            @Ajax.ActionLink("下一页", "ProductList", new { @id = (ViewBag.index + 1) }, new AjaxOptions { UpdateTargetId = "right" })
+            @Ajax.ActionLink("尾页", "ProductList", new { @id = Model.TotalPage }, new AjaxOptions { UpdateTargetId = "right" })
+
+        }
+
+
+    }
+
+</p>

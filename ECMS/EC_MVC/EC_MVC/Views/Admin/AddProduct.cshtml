@@ -1,0 +1,56 @@
+﻿@model EC_MVC.Models.Product
+
+
+
+<div>
+
+    @using (Ajax.BeginForm("addProduct", "", new AjaxOptions { OnSuccess = "addOk" }, new { @enctype = "multipart/form-data" }))
+    {
+        <p>
+            <span>商品名称:</span>  @Html.TextBoxFor(m => m.PName)
+        </p>
+
+        <p>
+            <span>商品价格:</span>  @Html.TextBoxFor(m => m.Price)
+        </p>
+
+        <p>
+            <span>商品图片:</span>  @Html.TextBoxFor(m => m.PImg, new { @type = "file" })
+        </p>
+
+        <p>
+            <span>商品类型:</span>  @Html.DropDownListFor(m => m.TId, ViewBag.types as List<SelectListItem>)
+        </p>
+
+        <p>
+            <span>商品介绍:</span>  @Html.TextBoxFor(m => m.Content)
+        </p>
+
+        <input id="Submit1" type="button" value="保存"  />
+    }
+</div>
+
+<script>
+    $(function () {
+        $("#Submit1").click(function () {
+            if ($("#form0").valid()) {
+                $("#form0").ajaxSubmit({
+                        type: "post",
+                        url: "/admin/AddProduct",
+                        success: function (data) {
+                            addOk(data);
+                        }
+                    });
+              
+            }
+        });
+
+    });
+
+    function addOk(data) {
+        if (data > 0) {
+            alert("添加成功");
+        }
+    }
+</script>
+

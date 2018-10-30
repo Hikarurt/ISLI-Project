@@ -1,0 +1,46 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Scripts/jquery-form.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <style>
+        #left,#right{
+            float:left;
+        }
+
+        #left{
+            width:300px;
+        }
+    </style>
+   
+</head>
+<body>
+    <h1>管理员视图</h1>
+    <h3>尊敬的管理员：，欢迎您，今天是 @DateTime.Now.ToString("yyyy年MM月dd日 HH:mm dddd")</h3>
+    <div id="left">
+        <ul>
+            <li>@Ajax.ActionLink("新增商品", "addProduct", new AjaxOptions {HttpMethod="get", UpdateTargetId = "right" })</li>
+            <li>@Ajax.ActionLink("查看商品列表", "productList", new AjaxOptions { UpdateTargetId = "right" })</li>
+            <li>@Ajax.ActionLink("买家列表", "csList", new AjaxOptions { UpdateTargetId = "right" })</li>
+            <li>@Ajax.ActionLink("新增买家", "addCs", new AjaxOptions { UpdateTargetId = "right" })</li>
+            <li>@Ajax.ActionLink("订单列表", "orderList", new AjaxOptions { UpdateTargetId = "right" })</li>
+        </ul>
+       
+    </div>
+
+    <div id="right">
+    </div>
+</body>
+</html>

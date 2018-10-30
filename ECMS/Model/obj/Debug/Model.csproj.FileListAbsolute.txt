@@ -1,0 +1,6 @@
+E:\BaWay\班级\1603E\高级第六月\课堂案例\ECMS\Model\bin\Debug\Model.dll
+E:\BaWay\班级\1603E\高级第六月\课堂案例\ECMS\Model\bin\Debug\Model.pdb
+E:\BaWay\班级\1603E\高级第六月\课堂案例\ECMS\Model\bin\Debug\EntityFramework.dll
+E:\BaWay\班级\1603E\高级第六月\课堂案例\ECMS\Model\bin\Debug\EntityFramework.SqlServer.dll
+E:\BaWay\班级\1603E\高级第六月\课堂案例\ECMS\Model\obj\Debug\Model.dll
+E:\BaWay\班级\1603E\高级第六月\课堂案例\ECMS\Model\obj\Debug\Model.pdb
