@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@* 错误写法：<a href="/view/person/personlist.cshtml">跳转到personlist页面</a>*@
+
+<a href="/person/personlist?id=123">跳转到personlist页面 传参数方式1</a>
+<br />
+<a href="/person/personlist2/123">跳转到personlist页面 传参数方式2</a>

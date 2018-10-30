@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+//razor 语法必须以@开始
+<br />
+@DateTime.Now;
+
+@@
+<br />
+//输出汉字
+@{
+    @:中国
+}
+
+<br />
+
+//三元运算符
+<br />
+@(1 != 2 ? "不等于" : "等于")
+<br />
+//判断语句
+<br />
+@if (1 != 2)
+{
+    @(true)
+}
+else
+{
+    @(false)
+}
+<br />
+//razor代码段，可以写c#的语法
+<br />
+@{
+
+    string[] arr = { "zhangsan", "lisi", "wangwu", "malui" };
+    for (var i = 0; i < arr.Length; i++)
+    {
+        @arr[i]
+        <br />
+    }
+}
+
+//foreach
+@{
+    foreach (var i in arr)
+    {
+        @i
+        <br />
+    }
+}

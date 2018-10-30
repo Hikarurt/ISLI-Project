@@ -1,0 +1,4 @@
+登录的时间：2018/9/15 9:49:39
+Ip：::1
+主机Dns名称：::1
+浏览器名称：System.Web.HttpBrowserCapabilitiesWrapper

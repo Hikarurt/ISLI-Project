@@ -1,0 +1,33 @@
+﻿@using Mvc控制器往试图传值;
+
+@model PersonModel
+
+@{
+    ViewBag.Title = "ViewBagDemo";
+}
+
+<h2>ViewBagDemo</h2>
+
+<div>接收值为：@ViewBag.Name</div>
+<br />
+
+//通过ViewBag传递对象值到view页面
+@ViewBag.PersonObject.id <br />
+@ViewBag.PersonObject.name
+<br />
+<br />
+
+//通过ViewData传递对象值到view页面
+@{
+    var tmpPerson = ViewData["PersonObject"] as PersonModel;
+    @tmpPerson.id;
+    @tmpPerson.name;
+}
+<br /><br />
+
+//通过TempData传递对象值到view页面
+@{
+    var tmpPerson2 = TempData["PersonObject"] as PersonModel;
+    @tmpPerson2.id;
+    @tmpPerson2.name;
+}
